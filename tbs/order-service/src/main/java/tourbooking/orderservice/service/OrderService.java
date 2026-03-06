@@ -22,4 +22,8 @@ public class OrderService {
                 request.getHotelId());
         return orderRepository.save(order);
     }
+
+    public Mono<Order> getOrder(String id) {
+        return orderRepository.findById(id);
+    }
 }
