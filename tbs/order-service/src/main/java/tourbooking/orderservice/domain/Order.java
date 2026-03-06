@@ -28,4 +28,16 @@ public class Order {
         this.createAt = Instant.now();
     }
 
+    public String getUserId() {
+        return userId;
+    }
+
+    public String getFlightId() {
+        return flightId;
+    }
+
+    public String getHotelId() {
+        return hotelId;
+    }
+
 }
