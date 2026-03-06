@@ -3,13 +3,19 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>tourbooking.tbs</groupId>
-	<artifactId>tour-booking-system</artifactId>
+	<artifactId>tbs</artifactId>
 	<version>1.0.0</version>
 	<packaging>pom</packaging>
 
-	<name>tbs</name>
+	<name>tour-booking-system</name>
 	<description>Demo project for Spring Boot</description>
 	
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>4.0.3</version>
+	</parent>
+
 	<url/>
 	<licenses>
 		<license/>
@@ -40,15 +46,7 @@
 	</build>
 
 	<modules>
-		<module>common-lib</module>
 		<module>order-service</module>
-		<module>payment-service</module>
-		<module>flight-inventory</module>
-		<module>hotel-inventory</module>
-		<module>gateway</module>
-		<module>auth-service</module>
-		<module>api-composition</module>
-		<module>frontend</module>
 	</modules>
 
 </project>
