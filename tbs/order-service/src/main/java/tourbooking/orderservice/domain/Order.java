@@ -1,7 +1,6 @@
 package tourbooking.orderservice.domain;
 
 import java.time.Instant;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -15,7 +14,7 @@ public class Order {
     private String hotelId;
 
     private OrderStatus status;
-    private Instant createAt;
+    private Instant createdAt;
 
     public Order() {
     }
@@ -25,7 +24,11 @@ public class Order {
         this.flightId = flightId;
         this.hotelId = hotelId;
         this.status = OrderStatus.CREATED;
-        this.createAt = Instant.now();
+        this.createdAt = Instant.now();
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getUserId() {
@@ -40,4 +43,15 @@ public class Order {
         return hotelId;
     }
 
+    public OrderStatus getStatus() {
+        return status;
+    }
+
+    public Instant getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setStatus(OrderStatus status) {
+        this.status = status;
+    }
 }
