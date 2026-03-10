@@ -2,6 +2,7 @@ package tourbooking.orderservice.controller;
 
 import org.springframework.web.bind.annotation.*;
 
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import tourbooking.orderservice.domain.Order;
 import tourbooking.orderservice.dto.CreateOrderRequest;
@@ -21,8 +22,13 @@ public class OrderController {
         return orderService.createOrder(request);
     }
 
-    @GetMapping
+    @GetMapping("/{id}")
     public Mono<Order> getOrder(@PathVariable String id) {
         return orderService.getOrder(id);
+    }
+
+    @GetMapping
+    public Flux<Order> getOrders() {
+        return orderService.getOrders();
     }
 }
